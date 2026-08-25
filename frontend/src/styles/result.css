@@ -1,0 +1,361 @@
+/* =========================================
+   DETECTION RESULT
+========================================= */
+
+.result-page {
+  animation: resultEnter 0.6s ease;
+}
+
+
+.result-title {
+  color: #0f172a;
+
+  font-size: 1.8rem;
+
+  margin-bottom: 25px;
+}
+
+
+/* =========================================
+   RESULT GRID
+========================================= */
+
+.result-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(280px, 0.8fr)
+    minmax(350px, 1.2fr);
+
+  gap: 25px;
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.result-image-card {
+  background: white;
+
+  border-radius: 16px;
+
+  padding: 15px;
+
+  border: 1px solid #e2e8f0;
+
+  box-shadow: var(--shadow);
+}
+
+
+.result-image-card img {
+  width: 100%;
+
+  height: 350px;
+
+  object-fit: cover;
+
+  border-radius: 12px;
+}
+
+
+/* =========================================
+   RESULT CARD
+========================================= */
+
+.result-card {
+  background: white;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 16px;
+
+  padding: 25px;
+
+  box-shadow: var(--shadow);
+
+  animation: fadeUp 0.7s ease;
+}
+
+
+.result-card:hover {
+  border-color: rgba(6, 182, 212, 0.35);
+}
+
+
+/* =========================================
+   DISEASE NAME
+========================================= */
+
+.disease-name {
+  color: #0f172a;
+
+  font-size: 1.7rem;
+
+  margin-bottom: 15px;
+}
+
+
+/* =========================================
+   CONFIDENCE
+========================================= */
+
+.confidence-section {
+  margin: 20px 0;
+}
+
+
+.confidence-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-bottom: 7px;
+
+  font-weight: 600;
+}
+
+
+.confidence-value {
+  color: #0f766e;
+
+  font-weight: 800;
+}
+
+
+.confidence-bar {
+  height: 10px;
+
+  background: #e2e8f0;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+}
+
+
+.confidence-progress {
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      #0f766e,
+      #06b6d4
+    );
+
+  border-radius: 10px;
+
+  animation: confidenceGrow 1.2s ease;
+}
+
+
+/* =========================================
+   SEVERITY
+========================================= */
+
+.severity {
+  display: inline-flex;
+
+  padding: 6px 13px;
+
+  border-radius: 20px;
+
+  font-weight: 700;
+
+  font-size: 0.85rem;
+}
+
+
+.severity.low {
+  background: #ccfbf1;
+
+  color: #0f766e;
+}
+
+
+.severity.medium {
+  background: #fef3c7;
+
+  color: #92400e;
+}
+
+
+.severity.high {
+  background: #fee2e2;
+
+  color: #991b1b;
+}
+
+
+/* =========================================
+   RESULT SECTIONS
+========================================= */
+
+.result-section {
+  margin-top: 25px;
+}
+
+
+.result-section h3 {
+  color: #0f172a;
+
+  margin-bottom: 10px;
+}
+
+
+.result-section ul {
+  padding-left: 20px;
+}
+
+
+.result-section li {
+  margin-bottom: 7px;
+
+  color: #475569;
+}
+
+
+/* =========================================
+   RECOMMENDATION CARDS
+========================================= */
+
+.recommendation-card {
+  padding: 15px;
+
+  background: #f8fafc;
+
+  border-left: 4px solid #06b6d4;
+
+  border-radius: 8px;
+
+  margin-bottom: 10px;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.recommendation-card:hover {
+  transform: translateX(4px);
+
+  background: #ecfeff;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.result-actions {
+  display: flex;
+
+  gap: 12px;
+
+  margin-top: 25px;
+}
+
+
+.result-actions button {
+  flex: 1;
+
+  padding: 12px;
+
+  border-radius: 9px;
+
+  border: none;
+
+  font-weight: 700;
+
+  transition: 0.25s ease;
+}
+
+
+.save-btn {
+  background: #0f766e;
+
+  color: white;
+}
+
+
+.save-btn:hover {
+  background: #115e59;
+
+  transform: translateY(-2px);
+}
+
+
+.scan-btn {
+  background: #e0f2fe;
+
+  color: #0369a1;
+}
+
+
+.scan-btn:hover {
+  background: #bae6fd;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes resultEnter {
+  from {
+    opacity: 0;
+
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes confidenceGrow {
+  from {
+    width: 0;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 800px) {
+
+  .result-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .result-image-card img {
+    height: 280px;
+  }
+
+  .result-actions {
+    flex-direction: column;
+  }
+}
